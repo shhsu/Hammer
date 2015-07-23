@@ -63,13 +63,7 @@ int _tmain(int argc, _TCHAR* argv[])
     }
 
 	// Create the response data
-	global_responseBuffer =
-"HTTP / 1.1 200 OK\n\
-Content - Length: 15\n\
-Content - Type : text / plain; charset = UTF - 8\n\
-Server: Example\n\
-Date : Wed, 17 Apr 2013 12 : 00 : 00 GMT\n\
-Hello, World!";
+	global_responseBuffer = "Hello, World!";
 	
 	PHTTP_LISTENER listener;
 	DWORD result = CreateHttpListener(&listener);

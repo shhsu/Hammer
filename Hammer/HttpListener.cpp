@@ -385,7 +385,7 @@ HttpListenerFlushLookasideThreadProc(
     PSLIST_ENTRY NextEntry;  
    
 	// TODO: Queue on timer
-	printf("Freeing context\n");          
+	// printf("Freeing context\n");
     for (Index = 0; Index < MAX_IO_CONTEXT_PROCESSOR_CACHE; Index++)  
     {              
         List = InterlockedFlushSList(&IoContextCacheList[Index].Header);            
@@ -532,8 +532,8 @@ SendHttpResponse(
     // Add a known header.
     //
     //ADD_KNOWN_HEADER
-	pResponseContext->Reponse.Headers.KnownHeaders[HttpHeaderContentType].pRawValue = "text/html"; 
-	pResponseContext->Reponse.Headers.KnownHeaders[HttpHeaderContentType].RawValueLength = (USHORT)strlen("text/html");
+	pResponseContext->Reponse.Headers.KnownHeaders[HttpHeaderContentType].pRawValue = "text/plain; charset=utf-8";
+	pResponseContext->Reponse.Headers.KnownHeaders[HttpHeaderContentType].RawValueLength = (USHORT)strlen("text/plain; charset=utf-8");
 
 	DEBUG_ASSERT(pEntityString);
 
